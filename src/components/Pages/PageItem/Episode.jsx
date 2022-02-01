@@ -1,4 +1,4 @@
-import replaceString from "./ReplaceString";
+import replaceString from "../../Functions/ReplaceString";
 
 const Episode = ({episode}) => {
     return (

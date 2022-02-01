@@ -1,5 +1,5 @@
-import Pagination from '../components/Pagination';
-import Episode from '../components/Episode';
+import Pagination from '../../Layout/Pagination';
+import Episode from '../PageItem/Episode';
 import {useState,useEffect} from 'react';
 
 const Episodes = ({episodes,changeSearchText,searchValue}) => {

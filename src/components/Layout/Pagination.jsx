@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 const Pagination = ({pages,handlePageNumber,currentPage})=>{
     const pageNumbers = [];
     for(let i = 1;i<=pages ;i++){

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Header from './components/Header'
+import Header from './components/Layout/Header'
 import { useState,useEffect } from 'react';
-import Characters from './Pages/Characters';
-import Episodes from './Pages/Episodes';
-import Loader from './components/Loader';
-import fetchFunction from './components/Fetch';
+import Characters from './components/Pages/PageContent/Characters';
+import Episodes from './components/Pages/PageContent/Episodes';
+import Loader from './components/Layout/Loader';
+import fetchFunction from './components/Functions/Fetch';
 
 const App = () => {
   const [search,setSearch] = useState('');
@@ -24,7 +24,7 @@ const App = () => {
         setCharacters(charactersData);
         setEpisodes(episodesData);
         
-        setIsLoading(false)
+        setIsLoading(false);
           }
       fetchData();
   

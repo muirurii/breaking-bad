@@ -34,4 +34,4 @@ const Header = ({search,handleSearch,searchText}) => {
     )
 }
 
-export default Header
+export default Header;

@@ -1,5 +1,5 @@
-import Character from '../components/Character';
-import Pagination from '../components/Pagination';
+import Character from '../PageItem/Character';
+import Pagination from '../../Layout/Pagination';
 import { useState,useEffect } from 'react';
 
 const Characters = ({characters,searchValue,changeSearchText}) => {
