@@ -10,7 +10,7 @@ const Header = ({search,handleSearch,searchText}) => {
             <p>Explore series information</p>
             <nav>
                 <ul>
-                    <li><Link to='/' className= {searchText === 'characters by name' ? 'active-tab' : null}>Characters</Link></li>
+                    <li><Link to='/breaking-bad' className= {searchText === 'characters by name' ? 'active-tab' : null}>Characters</Link></li>
                     <li><Link to ='/episodes' className={searchText === 'episodes by title or id' ? 'active-tab' : null}>Episodes</Link></li>
                 </ul>
             </nav>

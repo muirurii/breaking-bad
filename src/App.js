@@ -51,7 +51,7 @@ const App = () => {
         />
        {isLoading ? <Loader /> : fetchError ? <p className='message'>Please connect to the internet</p> :  (
         <Routes>
-          <Route path='/' 
+          <Route path='/breaking-bad' 
           element={<Characters 
           characters={characters}
           searchValue={search}
