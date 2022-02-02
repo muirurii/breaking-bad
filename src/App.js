@@ -12,20 +12,26 @@ const App = () => {
   const [isLoading,setIsLoading] = useState(false);
   const [characters,setCharacters] = useState([]);
   const [episodes,setEpisodes] = useState([]);
-  const [searchText,setSearchText] = useState('characters');
+  const [searchText,setSearchText] = useState('characters by name');
+  const [fetchError,setFetchError] = useState(true);
 
   useEffect(()=>{
     setIsLoading(true);
      
         const fetchData = async ()=>{ 
         const charactersData = await fetchFunction('characters');
-        const  episodesData =  await  fetchFunction('episodes');
-        
-        setCharacters(charactersData);
-        setEpisodes(episodesData);
+        const episodesData =  await  fetchFunction('episodes');
         
         setIsLoading(false);
-          }
+      
+
+        setCharacters(charactersData);
+        setEpisodes(episodesData);
+        if(charactersData.length || episodesData.length){
+          setFetchError(false);
+          return;
+        }
+      }
       fetchData();
   
   },[]);
@@ -43,7 +49,7 @@ const App = () => {
         searchText={searchText}
         handleSearch = {handleSearch} 
         />
-       {isLoading ? <Loader /> :
+       {isLoading ? <Loader /> : fetchError ? <p className='message'>Please connect to the internet</p> :  (
         <Routes>
           <Route path='/' 
           element={<Characters 
@@ -59,8 +65,8 @@ const App = () => {
           changeSearchText={changeSearchText}
             />} 
           />
-        </Routes>
-              }
+        </Routes>)
+          }
       </BrowserRouter>
     </div>
   )

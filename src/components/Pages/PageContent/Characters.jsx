@@ -23,16 +23,18 @@ const Characters = ({characters,searchValue,changeSearchText}) => {
             setCurrentPage(number);
         }
         useEffect(()=>{
-            changeSearchText('characters');
+            changeSearchText('characters by name');
          },[]);
     return (
         <>
-        <div className="container">
-        { pageCharacters.length ?
-         pageCharacters.map( character=> <Character char={character} key={character.char_id}/>
-            ) :  'No character was found try searching something else'
+        
+        { pageCharacters.length ?(
+            <div className="container"> 
+            {pageCharacters.map( character=> <Character char={character} key={character.char_id}/>)}
+         </div> )
+         : <p className='message'>No character was found try searching something else</p> 
         }
-        </div>
+       
         <Pagination 
          pages={pages}
          handlePageNumber = {handlePageNumber}

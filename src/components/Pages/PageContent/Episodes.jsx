@@ -17,7 +17,7 @@ const Episodes = ({episodes,changeSearchText,searchValue}) => {
    const pageEpisodes = filteredEpisodes.slice(firstEpisodeIndex,lastEpisodeIndex);
    const pages = Math.ceil(filteredEpisodes.length/episodesPerPage);
     useEffect(()=>{
-       changeSearchText('episodes');
+       changeSearchText('episodes by title or id');
     },[]);
         const handlePageNumber = (number)=>{
             setCurrentPage(number);
@@ -30,7 +30,7 @@ const Episodes = ({episodes,changeSearchText,searchValue}) => {
                       return(
                             <Episode  key={episode.episode_id} episode={episode}/>
                             )
-                        }) : 'No episodes found try searching something else'
+                        }) : <p className='message'>No episodes found try searching something else</p>
                     }
                 </div>
             <Pagination
